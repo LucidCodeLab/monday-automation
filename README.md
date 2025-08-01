@@ -35,14 +35,14 @@ monday-automation/
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/your-username/monday-automation.git
+   git clone https://github.com/LucidCodeLab/monday-automation.git
    cd monday-automation
    ```
 
 2. Install dependencies:
 
    ```bash
-   npm install fs-extra follow-redirects
+   npm install
    ```
 
 3. Start the script:
@@ -59,13 +59,18 @@ monday-automation/
    ngrok http 80
    ```
 
-6. Copy the HTTPS URL provided by Ngrok (e.g., `https://abc123.ngrok.io`) and set it as the webhook URL in your Monday.com board automation.
+6. Copy the Ngrok HTTPS forwarding URL (e.g., `https://abc123.ngrok.io`).
+
+7. Add it to your Monday.com webhook automation:
+   ```
+   When status changes to something, send webhook to https://abc123.ngrok.io
+   ```
 
 ---
 
 ## ⚙️ Configuration
 
-- Update the hardcoded **Monday API token** in the script with your own.
+- Update the hardcoded **Monday API token** in the .env.example with your own.
 - Customize the column titles in `targetColumnLabelTitles` and `targetValueColumnTitles` as needed.
 
 ---
@@ -80,29 +85,6 @@ monday-automation/
    - Copies contents of `SourceFolder` into the new path
    - Downloads attached files into `/Attachments`
    - Applies a green Finder label (macOS only)
-
----
-
-## 🌐 Webhook Setup with Ngrok
-
-1. Start the server:
-
-   ```bash
-   sudo node Monday_Automation.js
-   ```
-
-2. In a new terminal:
-
-   ```bash
-   ngrok http 80
-   ```
-
-3. Copy the Ngrok HTTPS forwarding URL (e.g., `https://abc123.ngrok.io`)
-
-4. Add it to your Monday.com webhook automation:
-   ```
-   When status changes to something, send webhook to https://abc123.ngrok.io
-   ```
 
 ---
 
