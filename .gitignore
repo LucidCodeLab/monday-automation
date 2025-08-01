@@ -1,0 +1,19 @@
+
+
+
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Mac system files
+.DS_Store
+
+# Output folders (customize as needed)
+DestinationFolder/
